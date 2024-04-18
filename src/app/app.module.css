@@ -1,0 +1,55 @@
+@keyframes eyelids {
+    0%{
+        position: absolute;
+        bottom: 0%;
+
+    }
+
+    10%{
+        position: absolute;
+        bottom: 100%;
+
+    }
+
+    10%{
+        position: absolute;
+        bottom: 0%;
+
+    }
+
+    40%{
+        position: absolute;
+        bottom: 100%;
+
+    }
+    80%{
+        position: absolute;
+        bottom: 0%;
+
+    }
+
+    100%{
+        position: absolute;
+        bottom: 100%;
+
+    }
+    
+}
+
+@keyframes left-eye-lid {
+    0%{
+        position: absolute;
+        bottom: 0%;
+    }
+
+    100%{
+        position: absolute;
+        bottom: 100%;
+    }
+    
+}
+
+
+.leftLid{
+    animation: left-eye-lid 200ms  ease-in-out 2s infinite ;
+}
