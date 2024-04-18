@@ -23,7 +23,7 @@ module.exports = {
           nose_mouth2: "url('/nose_mouth.svg')",
           left_ear: "url('/left_ear.svg')",
           right_ear: "url('/right_ear.svg')",
-          doggo: "url('/doggo.svg')",
+          doggo: "url('/Doggo.svg')",
       },
     },
   },
