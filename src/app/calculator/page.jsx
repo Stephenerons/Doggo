@@ -8,7 +8,7 @@ export default function Calculator() {
   const [ageFigure, setAgeFigure]= useState(0)
   const [breedType, setBreedType]= useState('')
   const [formValidity, setFormValidity]= useState(false)
-  // const [finalResult, setFinalResult] = useState(true)
+  const [finalResult, setFinalResult] = useState(0)
 
   const breedsAndLifespans =[
     { "breed":"Labrador Retriever",
@@ -105,6 +105,8 @@ export default function Calculator() {
     setBreedType(event.target.value)
   }
 
+
+
   const removeDefaultSubmitBehaviour = (event) => {
     event.preventDefault()
     formValidation()
@@ -147,12 +149,11 @@ export default function Calculator() {
     
 
       const calculateDogAgeToHuman = ()  => {
-        let result = converted * newLifeSpan
+        const result = converted * newLifeSpan
         return Math.round(result)
       }
-
-      console.log(calculateDogAgeToHuman())
-
+      const printResult = calculateDogAgeToHuman()
+      setFinalResult(printResult)
 
 
   }, [breedType,timeFrame,ageFigure])
@@ -264,11 +265,11 @@ export default function Calculator() {
                 </div>
 
             {/* final output starts here */}
-            <div className={formValidity === true ? '': 'hidden md:hidden ' }>
-              <div className='md:flex md:justify-center md:items-center flex justify-center items-center mt-0 '>
+            <div className={formValidity === true ? '': 'hidden md:hidden' }>
+              <div className='md:flex md:justify-center md:items-center flex justify-center items-center mt-0'>
                 <div className='md:flex md:flex-col md:justify-center md:items-center text-center'>
 
-                    <h2 className='md:text-4xl text-xl'>{` ${dogName}'s age in human years is`} <span className='md:text-5xl text-4xl text-[#EF5615] md:text-[#EF5615]'>53</span> </h2>
+                    <h2 className='md:text-4xl text-xl'>{` ${dogName}'s age in human years is`} <span className='md:text-5xl text-4xl text-[#EF5615] md:text-[#EF5615]'>{finalResult}</span> </h2>
                 </div>
               </div>
             </div>
